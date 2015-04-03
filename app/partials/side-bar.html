@@ -1,0 +1,25 @@
+<section>
+	<accordion>
+		<span ng-if="solutions && part != 'market'">			
+			<!-- <a class="overview" ng-href="main/{{part}}/overview">Overview</a> -->
+			<accordion-group heading="Solutions" is-open="status.open">
+	       		<ul>
+		      		<li ng-repeat="sol in solutions"><a ng-href="main/{{part}}/{{sol.name}}">{{sol.headline}}</a></li>
+		      	</ul>
+			</accordion-group>
+		</span>
+
+		<accordion-group heading="Market" is-open="status.openMarket">
+		      <ul>
+		      	<li><a href="main/market/federal_assets">Federal Assets</a></li>
+		      	<li><a href="main/market/safe_cities">Safe Cities</a></li>
+		      	<li><a href="main/market/correctional_facilities">Correctional Facilities</a></li>
+		      	<li><a href="main/market/airports">Airports</a></li>
+		      	<li><a href="main/market/borders">Borders</a></li>
+		      	<li><a href="main/market/maritime">Maritime</a></li>
+		      	<li><a href="main/market/mobile_infrastructure">Mobile Infrastructure</a></li>
+		      	<li><a href="main/market/transportation">Transportation</a></li>
+		      </ul>
+		</accordion-group>
+	</accordion>
+</section>

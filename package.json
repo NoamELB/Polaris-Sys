@@ -1,0 +1,29 @@
+{
+  "name": "Polaris",
+  "version": "0.0.1",
+  "description": "web app about Polaris-Star company",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.9.0",
+    "compass": "^0.1.0",
+    "express": "^4.9.7",
+    "gulp": "^3.8.8",
+    "gulp-develop-server": "^0.2.4",
+    "gulp-ruby-sass": "^0.7.1",
+    "prerender-node": "^1.2.0"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NoamElb/Polaris-Sys/"
+  },
+  "keywords": [
+    "Polaris-Star"
+  ],
+  "license": "MIT"
+}

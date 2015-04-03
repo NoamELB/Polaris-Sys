@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="he" ng-app="app.module" ng-controller="MainCtrl" ng-class="{'small':isSmall}">
+	<head ng-controller="HeaderCtrl">
+		<meta charset="UTF-8">
+		<title ng-bind="Head.getTitle()">Polaris Star - Integration Solutions</title>
+		<meta name="fragment" content="!">
+		<base href="/">
+		<meta name="description" content="Polaris Star provides creative integration solutions using cutting-edge technologies of various kinds, providing to various nation-level entities." ng-if="nojavascript">
+		<meta name="description" content="{{ Head.getMetaDes() }}">
+		<meta name="keywords" content="{{ Head.getMetaKey() }}">
+		<meta name="viewport" content="width=device-width">
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.4/angular.min.js"></script>
+	    <script src="scripts/bootstrap/ui-bootstrap-custom-tpls-0.12.0.min.js"></script>
+		<script src="scripts/angular/angular-animate.min.js"></script>
+		<script src="scripts/angular/angular-route.min.js"></script>
+		
+		<script src="scripts/app.js"></script>
+		<script src="scripts/config.js"></script>
+		<script src="scripts/filters.js"></script>
+		<script src="scripts/services.js"></script>
+
+		<script src="scripts/packages/titlebar/titlebar.js"></script>
+		<script src="scripts/packages/titlebar/directive.js"></script>
+		<script src="scripts/packages/titlebar/ctrl.js"></script>
+
+		<script src="scripts/packages/footerbar/footerbar.js"></script>
+		<script src="scripts/packages/footerbar/directive.js"></script>
+		<script src="scripts/packages/footerbar/ctrl.js"></script>
+
+		<script src="scripts/packages/sidebar/sidebar.js"></script>
+		<script src="scripts/packages/sidebar/directive.js"></script>
+		<script src="scripts/packages/sidebar/ctrl.js"></script>
+
+		<script src="scripts/packages/content/content.js"></script>
+		<script src="scripts/packages/content/ctrl.js"></script>
+
+		<script src="scripts/packages/market/market.js"></script>
+		<script src="scripts/packages/market/ctrl.js"></script>
+
+		<script src="scripts/packages/management/management.js"></script>
+		<script src="scripts/packages/management/ctrl.js"></script>
+
+		<script src="scripts/packages/head/head.js"></script>
+		<script src="scripts/packages/head/factory.js"></script>
+		<script src="scripts/packages/head/ctrl.js"></script>
+
+		<script src="scripts/packages/main/main.js"></script>
+		<script src="scripts/packages/main/ctrl.js"></script>
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="styles/main.css">
+	</head>
+	<body>
+		<div ng-class="{'sticky-wrap': !isSmall && !tooLong}">
+			<title-bar></title-bar>
+			<div class="main-cnt" ng-class="{'general-text':content}">
+
+				 <!--NO JAVASCRIPT/OLD BROWSER -->
+				 <div class="general-text center" ng-if="nojavascript">
+					<H1><span class="glyphicon glyphicon-send"></span></H1>
+					<H2>You are using an outdated browser or you don't have Javascript turned on.<br>
+					By all means, please update to a modern web browser.<br>
+					We will just wait here in the meantime...</H2><br>
+					<a class="btn btn-primary" href="http://www.google.com/chrome/" target="_blank">DOWNLOAD CHROME</a>
+				</div>
+				<!--END -->
+				
+				<side-bar class="side-bar" ng-show="content"></side-bar>
+				<div ng-view class="main-animate"></div>
+			</div>
+		</div>
+
+		<footer-bar class="footer-bar"></footer-bar>
+		
+
+		<script>
+		/* Google Analytics */
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-XXXXX-X');
+			ga('send', 'pageview');
+    	</script>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+<div class="top-part">
+	<div class="main-bar">
+		<ul class="bar-list">
+			<li class="logo"><a class="no-pad" href="/landing"><img src="../images/logo.png" title="Polaris Star"></a></li>
+			<span class="show-ignored-bar ng-hide" ng-show="!isSmall || isClicked">
+			<li ng-repeat="li in titlebar">
+				<a ng-class="{'clicked':li.isClicked}" ng-href="{{::li.url}}" >{{::li.content}}</a>
+			</li>
+			</span>
+			<li ng-show="isSmall" ng-click="isClicked=!isClicked" class="bar-btn"><a  ng-class="{'clicked':isClicked}"  href="">≡</a></li>
+		</ul>
+	</div>
+</div>
