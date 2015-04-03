@@ -7,3 +7,4 @@
 	angular
 		.module('app.management', []);
 })();
+require('./ctrl.js');

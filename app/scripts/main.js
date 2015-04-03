@@ -1,0 +1,12 @@
+require('./app.js');
+require('./config.js');
+require('./filters.js');
+require('./services.js');
+require('./packages/titlebar/titlebar.js');
+require('./packages/footerbar/footerbar.js');
+require('./packages/sidebar/sidebar.js');
+require('./packages/content/content.js');
+require('./packages/market/market.js');
+require('./packages/management/management.js');
+require('./packages/head/head.js');
+require('./packages/main/main.js');

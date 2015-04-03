@@ -8,3 +8,5 @@
 		.module('app.titlebar', []);
 		
 })(angular);
+require('./ctrl.js');
+require('./directive.js');

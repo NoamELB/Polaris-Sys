@@ -7,3 +7,5 @@
 		.module('app.head', []);
 		
 })(angular);
+require('./ctrl.js');
+require('./factory.js');

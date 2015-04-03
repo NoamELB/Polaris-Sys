@@ -8,3 +8,5 @@
 		.module('app.sidebar', []);
 		
 })(angular);
+require('./ctrl.js');
+require('./directive.js');

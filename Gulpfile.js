@@ -2,7 +2,8 @@
 	'use strict';
 	var gulp 		= require("gulp"),
 		sass 		= require("gulp-ruby-sass"),
-		server 		= require("gulp-develop-server");
+		server 		= require("gulp-develop-server"),
+		browserify 	= require('gulp-browserify');
 
 	gulp.task("default", function(){
 		console.log("starting");
@@ -14,6 +15,16 @@
 		.pipe(sass())
 		.on("error", function (err) {console.log(err.message);})
 		.pipe(gulp.dest("app/styles"));
+	});
+	// Browserify
+	gulp.task('scripts', function() {
+	    // Single entry point to browserify 
+	    gulp.src('app/scripts/main.js')
+	        .pipe(browserify({
+	          insertGlobals : true,
+	          debug : !gulp.env.production
+	        }))
+	        .pipe(gulp.dest('app'));
 	});
 
 	// Server start
@@ -27,8 +38,9 @@
 
 	// WATCH
 	// =====
-	gulp.task("watch", ["server:start"], function(){
+	gulp.task("watch", ["server:start", "scripts"], function(){
 		gulp.watch(["app/styles/*.scss"], ["compile:css"]);
 		gulp.watch(["main.js", "routes/**/*.js"], ["server:restart"]);
+		gulp.watch(["app/scripts/**/*.js"], ["scripts"]);
 	});
 })();

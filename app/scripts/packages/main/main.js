@@ -7,3 +7,4 @@
 	angular
 		.module('app.main', []);
 })();
+require('./ctrl.js');

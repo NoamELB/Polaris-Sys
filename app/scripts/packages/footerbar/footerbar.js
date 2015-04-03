@@ -8,3 +8,5 @@
 		.module('app.footerbar', []);
 		
 })(angular);
+require('./ctrl.js');
+require('./directive.js');
