@@ -23,11 +23,15 @@
 		$scope.isClicked = false;
 
 		/* check when URL changes to change clicked class */
-		$scope.$on("$routeChangeSuccess", function () {
+		$scope.$on("$routeChangeSuccess", clicked);
+
+		function clicked () {
 			$scope.isClicked = false;
-			angular.forEach($scope.titlebar, function(li, index) {
+			angular.forEach($scope.titlebar, liClicked);
+		}
+
+		function liClicked (li, index) {
 	    		li.isClicked = ($location.path().indexOf(li.url) == 0)
-	    	});
-		});
+	    }
 	}
 })();

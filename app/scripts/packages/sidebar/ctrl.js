@@ -18,7 +18,9 @@
 			openMarket: false
 		};
 		// open and close for the accordion
-		$scope.$on("$routeChangeSuccess", function () {
+		$scope.$on("$routeChangeSuccess", accordionHandle);
+
+		function accordionHandle () {
 			$scope.status.open = true;
 			if ($scope.isSmall) {
 				$scope.status.open = false;
@@ -26,9 +28,11 @@
 			}
 			var split = $location.path().split('/');
 			$scope.part = split[2];			
-			Content.success(function(data) {
-				$scope.solutions = (data[0])[$scope.part];
-			});
-		});
+			Content.success(dataHandle);
+		}
+
+		function dataHandle (data) {
+			$scope.solutions = (data[0])[$scope.part];
+		}
 	}
 })();

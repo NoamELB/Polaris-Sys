@@ -16,12 +16,15 @@
 			$scope.content = false;
 			$scope.tooLong = false;
 			// watch width in order to switch between phone and computer display
-			$interval(function() {
+			$interval(sizeHandle, 500);
+			$scope.$on("$routeChangeSuccess", classHandle);
+
+			function sizeHandle () {
 				$scope.isSmall = ($window.innerWidth < widthForSmall);
-			}, 500);
-			$scope.$on("$routeChangeSuccess", function () {
+			}
+			function classHandle () {
 		    	$scope.content = ($location.path().indexOf('/main') == 0);
 		    	$scope.tooLong = (($location.path().indexOf('/management') == 0) || $scope.content);
-			});
+			}
 		}
 })();

@@ -11,8 +11,10 @@
 		managementCtrl.$inject = ['$scope', 'ManagementContent'];
 
 		function managementCtrl($scope, ManagementContent) {
-			ManagementContent.success(function(data) {
+			ManagementContent.success(dataFetch);
+
+			function dataFetch (data) {
 				$scope.managementContent = data;
-			});
+			}
 		}
 })();
